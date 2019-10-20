@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
     <html>
         <head>
             <title>Scallywag Tickets | About</title>
@@ -8,7 +8,7 @@
         <body>
             <!-- JUST TRIED IMPLEMENTING THIS-->
             <?php 
-                require_once "header.php";
+                require_once("header.php");
             ?>
 	        <section class="login">
 		        <div class="login-container">
