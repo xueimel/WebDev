@@ -8,7 +8,7 @@
         <body>
             <!-- JUST TRIED IMPLEMENTING THIS-->
             <?php 
-                echo "today is:".date("Y-m-d");
+                require_once('header.php');
             ?>
 	        <section class="login">
 		        <div class="login-container">
