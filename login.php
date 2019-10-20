@@ -8,7 +8,7 @@
         <body>
             <!-- JUST TRIED IMPLEMENTING THIS-->
             <?php 
-                import_once('header.php');
+                require_once 'header.php';
             ?>
 	        <section class="login">
 		        <div class="login-container">
