@@ -15,15 +15,6 @@
 		<div class="search-home">
 			<span><strong>LETS FIND YOU SOME TICKETS, GUY!</strong></span>
 			<br />
-			<div class="dropdown">
-				<button class="dropbtn">HOW MANIES??</button>
-				<div class="dropdown-content">
-					<a href="#">1</a>
-					<a href="#">2</a>
-					<a href="#">3</a>
-				</div>
-			</div>
-			<br />
 			<input type="text" name="location" placeholder="City or ZIP Code">
 			<br />
 			<input type="text" name="artist" placeholder="Artist">
