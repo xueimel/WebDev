@@ -6,33 +6,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="main-header">
-        <nav class="nav main-nav">
-            <!-- tells the website that there are links here-->
-            <div id="nav-container">
-                <div class="left">
-                    <a href="home.php">LOGO IN TRAINING</a>
-                </div>
-
-                <div class="center">
-                    <ul>
-                        <!-- unordered list-->
-                        <li id="center-right"><a href="tickets.php">TICKETS</a></li>
-                        <li id="center-left"><a href="about.php">CONTACT/part that refuses to work</a></li>
-
-                    </ul>
-                </div>
-                <div class="right">
-                    <a href="login.php">LOGIN</a>
-                </div>
-            </div>
-        </nav>
-        <h1 class="company-name company-name-large">Scallywag Tickets</h1>
-    </header>
+    <?php 
+        require_once 'header.php';
+		session_start();
+	?>
 
     <section>
         <hr>
         <h2>TICKETS</h2>
+		<?php print("Location: ".$_SESSION['search_location']."\n Artist: ".$_SESSION['search_artist']);?>
         <hr>
         <div class="result">
             <div>

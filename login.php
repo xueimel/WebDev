@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <html>
     <html>
         <head>
@@ -6,32 +9,36 @@
             <link rel="stylesheet" href="styles.css">
         </head>
         <body>
-            <!-- JUST TRIED IMPLEMENTING THIS-->
             <?php 
                 require_once 'header.php';
-            ?>
-	        <section class="login">
-		        <div class="login-container">
-			        <input type="text" name="lname" placeholder="Username">
-                    <input type="text" name="lname" placeholder="Password">
-                    <button class="submit">SIGN IN</button>
 
-		        </div>
-	        </section>
-
-	        <section class="create-account">
-		        <div class="create-account-container">
-			        <input type="text" name="fname" placeholder="First Name">
-                    <br />
-                    <input type="text" name="lname" placeholder="Last Name">
-			        <input type="text" name="lname" placeholder="Email">
-                    <input type="text" name="lname" placeholder="Phone Number">
-                    <input type="text" name="lname" placeholder="Username">
-                    <input type="text" name="lname" placeholder="Password">
-			        <input type="text" name="lname" placeholder="Reconfirm Password">
-			        <button class="submit">SUBMIT</button>
-		        </div>
-	        </section>
+				if (isset($_SESSION['message'])){
+					echo "<div class='message bad'>{$_SESSION['message']}</div>";
+				}
+			?>
+			<form method="post" action="login_handler.php">
+				<section class="login">
+					<div class="login-container">
+						<input type="text" name="username" placeholder="Username">
+						<input type="password" name="password" placeholder="Password">
+						<button class="submit">SIGN IN</button>
+					</div>
+				</section>
+			</form>
+			<form method="post" action="new_account_handler.php">
+				<section class="create-account">
+					<div class="create-account-container">
+						<input type="text" name="fname" placeholder="First Name">
+						<input type="text" name="lname" placeholder="Last Name">
+						<input type="text" name="email" placeholder="Email">
+						<input type="text" name="phone" placeholder="Phone Number">
+						<input type="text" name="username" placeholder="Username">
+						<input type="text" name="password" placeholder="Password">
+						<input type="text" name="password2" placeholder="Reconfirm Password">
+						<button class="submit">SUBMIT</button>
+					</div>
+				</section>
+			</form>
 	            <footer class="main-footer">
                 <div class="container main-footer-container">
                     <h3 class="band-name">cheap cheap</h3>
