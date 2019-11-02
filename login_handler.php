@@ -1,5 +1,5 @@
 ﻿<?php
-    session_start();
+
     
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -19,7 +19,7 @@
         $_SESSION['message'] = "Welcome back ".$username."! It's great to see you again!";
         $_SESSION['logged_in'] = true;
         $_SESSION['user'] = $username;
-        header("Location: http://localhost/WebDev/granted.php");
+        header("Location: http://localhost/WebDev/login.php");
         exit;
     }
 

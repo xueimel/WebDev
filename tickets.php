@@ -25,7 +25,7 @@
                     <span>$12.99</span>
                     <button class="purchase">PURCHASE</button>
                 </div>
-</div>
+		</div>
         <br>
         <div class="result">
             <div>

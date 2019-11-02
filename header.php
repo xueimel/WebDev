@@ -16,8 +16,11 @@
             <div class="right">
                 <a href="login.php">
 					<?php 
+						if(!isset($_SESSION)){ 
+							session_start(); 
+						} 
 						if ($_SESSION['logged_in'] == true){
-							echo "SIGN_OUT";
+							echo "SIGNOUT";
 						}
 						else{
 							echo "LOGIN";
