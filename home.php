@@ -7,6 +7,7 @@
 </head>
 <body>
     <?php 
+		session_start();
         require_once 'header.php';
     ?>
     <hr> <!-- makes a boarder line-->

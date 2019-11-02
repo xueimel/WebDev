@@ -12,9 +12,18 @@
                     <li><a href="about.php">CONTACT</a></li>
                 </ul>
             </div>
-
+			
             <div class="right">
-                <a href="login.php">LOGIN</a>
+                <a href="login.php">
+					<?php 
+						if ($_SESSION['logged_in'] == true){
+							echo "SIGN_OUT";
+						}
+						else{
+							echo "LOGIN";
+						}
+					?>
+				</a>
             </div>
         </div>
     </nav>

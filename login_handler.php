@@ -19,7 +19,7 @@
         $_SESSION['message'] = "Welcome back ".$username."! It's great to see you again!";
         $_SESSION['logged_in'] = true;
         $_SESSION['user'] = $username;
-        header("Location: http://localhost/WebDev/login.php");
+        header("Location: http://localhost/WebDev/granted.php");
         exit;
     }
 
