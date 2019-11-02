@@ -1,9 +1,13 @@
 ﻿<?php
+    echo "FUUUUDGE";
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
 
-    
     $username = $_POST["username"];
     $password = $_POST["password"];
-    
+
     require_once 'Tao.php';
 	$tao = new Tao();
     $results = $tao->check_credentials($username, $password);
