@@ -35,7 +35,7 @@
         require_once 'Tao.php';
 		$tao = new Tao();
 		$tao->add_user($username, $password, $fname, $lname, $phone, $email);
-        header("Location: http://localhost/WebDev/login.php");
+        header("Location: /login.php");
 		$_SESSION['message'] = "Congratulations ".$username." You are now a Scallywag member!";
         $_SESSION['logged_in'] = true;
         exit;
