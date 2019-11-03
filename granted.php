@@ -6,7 +6,7 @@
     //$users = $tao->get_users();
 
     if (!isset($_SESSION['logged_in']) || true !== $_SESSION['logged_in']) {
-        header("Location: http://localhost/WebDev/login.php");
+        header("Location: login.php");
         exit;
     }
     echo "ACCESS GRANTED ";

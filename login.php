@@ -19,7 +19,7 @@
 					echo "<div class='message bad'>{$_SESSION['message']}</div>";
 				}
 			?>
-			<form method="get" action="granted.php">
+			<form method="get" action="login.php">
 				<section class="login">
 					<div class="login-container">
 						<input type="text" name="username" placeholder="Username">
