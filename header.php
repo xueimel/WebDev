@@ -19,11 +19,11 @@
 						if(!isset($_SESSION)){ 
 							session_start(); 
 						} 
-						if ($_SESSION['logged_in'] == true){
-							echo "SIGNOUT";
+						 if (!isset($_SESSION['logged_in']) || true !== $_SESSION['logged_in']) {
+							echo "LOGIN";
 						}
 						else{
-							echo "LOGIN";
+							echo "LOGOUT";
 						}
 					?>
 				</a>

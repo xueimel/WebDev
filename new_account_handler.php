@@ -45,7 +45,7 @@
 		
 			$_SESSION['message'] = $_SESSION['message']." ".$wrong."<br>";
 		}
-        header("Location: http://localhost/WebDev/login.php");
+        header("Location: login.php");
         exit;
     }
 ?>
