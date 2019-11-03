@@ -1,5 +1,4 @@
 ﻿<?php
-    echo "FUUUUDGE";
     if(!isset($_SESSION))
     {
         session_start();
@@ -24,12 +23,12 @@
         $_SESSION['logged_in'] = true;
         $_SESSION['user'] = $username;
         header("Location: http://localhost/WebDev/login.php");
-        exit;
+       // exit;
     }
 
     else{
         $_SESSION['message'] = "Invalid username or password";
         header("Location: http://localhost/WebDev/login.php");
-        exit;
+      //  exit;
     }
 ?>
