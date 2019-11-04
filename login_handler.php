@@ -22,14 +22,14 @@
         $_SESSION['message_good'] = "Welcome back ".$username."! It's great to see you again!";
         $_SESSION['logged_in'] = true;
         $_SESSION['user'] = $username;
-        //header("Location: login.php");
-        //exit;
+        header("Location: login.php");
+        exit;
     }
 
     else{
         $_SESSION['message_bad'] = "Invalid username or password";
-        //header("Location: login.php");
-        //exit;
+        header("Location: login.php");
+        exit;
     }
-    print_r($_SESSION);
+    
 ?>
