@@ -35,9 +35,9 @@
         require_once 'Tao.php';
 		$tao = new Tao();
 		$tao->add_user($username, $password, $fname, $lname, $phone, $email);
-        header("Location: login.php");
 		$_SESSION['message_good'] = "Congratulations ".$username." You are now a Scallywag member!";
         $_SESSION['logged_in'] = true;
+        header("Location: login.php");
         exit;
     }
     else{

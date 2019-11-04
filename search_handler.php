@@ -62,8 +62,8 @@
 
 	$_SESSION['search_location'] = $location;
 	$_SESSION['search_artist'] = $artist;
-	header("location: tickets.php");
-	exit;
+	header("Location: tickets.php");
+	exit();
 
 
 

@@ -3,6 +3,7 @@
 	if(!isset($_SESSION)){ 
 		session_start(); 
 		$_SESSION = array();
+		print_r($_SESSION);
 	} 
 ?>
 <html>

@@ -3,7 +3,7 @@
 	if(!isset($_SESSION)){
 		session_start();
 	}
-print($_SESSION['search_location']);
+	print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,28 +13,22 @@ print($_SESSION['search_location']);
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <?php 
-        require_once 'header.php';
-		if(!isset($_SESSION)){
-			session_start();
-		}
-	print_r($_SESSION['search_location']);
-	?>
     <section>
         <hr>
         <h2>TICKETS</h2>
 		<?php 
-		if(isset($_SESSION['search_location'])){
-			print("Location: ".$_SESSION['search_location']."\n Artist: ".$_SESSION['search_artist']);
-		}
-		if(isset($_SESSION['ticketmaster'])){
-			foreach($_SESSION['ticketmaster'] as $res){
-			print_r($res);
-				print("<div class=\"result\"><div><strong>Ticketmaster</strong></div>");
-				print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/ticketmaster.png\"> </a>");
-				//print("<span>.$res['min'].</span>");
+			print_r($_SESSION);
+			if(isset($_SESSION['search_location'])){
+				print("Location: ".$_SESSION['search_location']."\n Artist: ".$_SESSION['search_artist']);
 			}
-		}
+			if(isset($_SESSION['ticketmaster'])){
+				foreach($_SESSION['ticketmaster'] as $res){
+				print_r($res);
+					print("<div class=\"result\"><div><strong>Ticketmaster</strong></div>");
+					print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/ticketmaster.png\"> </a>");
+					//print("<span>.$res['min'].</span>");
+				}
+			}
 		?>
 
         <hr>
