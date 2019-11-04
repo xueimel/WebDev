@@ -19,7 +19,7 @@
 
     $_SESSION = array();
     if ($valid) {
-        $_SESSION['message'] = "Welcome back ".$username."! It's great to see you again!";
+        $_SESSION['message-good'] = "Welcome back ".$username."! It's great to see you again!";
         $_SESSION['logged_in'] = true;
         $_SESSION['user'] = $username;
         header("Location: login.php");
@@ -27,7 +27,7 @@
     }
 
     else{
-        $_SESSION['message'] = "Invalid username or password";
+        $_SESSION['message-bad'] = "Invalid username or password";
         header("Location: login.php");
         exit;
     }

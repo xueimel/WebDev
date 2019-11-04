@@ -9,5 +9,14 @@ Create Table users (
 );
 
 Create Table tickets (
-
-)
+	id int auto_increment,
+	band_name varchar(50),
+    url varchar(100),
+    venue varchar(50),
+    concert_date varchar(20),
+    min decimal,
+    max decimal,
+    primary key (id)
+    };
+    
+    

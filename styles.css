@@ -1,72 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Montaga|Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
 
 *{
     box-sizing: border-box;
-    font-family: Raleway;
     color: rgb(134, 133, 133);
+    font-size: 24pt;
 }
 
 body {
     background-color: mintcream;
-}
-
-.main-header {
-    background-color: rgba(0,0,0,.6);
-    background-blend-mode: multiply; /*blends the color of image with backgound*/
-    background-size: cover; /*resizes according to screen size*/
-    padding: 3%;
-    overflow: hidden;
-}
-
-.main-nav {
-    padding-top: 3%;
-    position: relative;
-    font-size: 1.1em;
-    font-weight: lighter;
-    text-align:center;
-}
-
-.nav ul {
-    margin: 0;
-}
-
-.nav li {
-    display: inline;
-}
-
-.nav a {
-    DISPLAY: inline; /*Inline blocks create horizontal with padding around all sides*/
-    padding: .5em; /*em is a constant of size fontsize*/
-    color: white;
-    text-decoration: none;  
-}
-
-.center {
-    margin-left: 3%;
-    padding-right: 5%;
-    float: left;
-    display: inline;
-    text-align: left;
-}
-
-
-.left {
-    float: left;
-    margin-left: 2%;
-}
-
-.left img{
-    width: 5%;
-    height: 5%;
-}
-
-.right {
-    float: right;
-    margin-right:1%;
-}
-
-.nav a:hover{
-    background-color: rgba(255,255,255, .3);
 }
 
 .result {
@@ -74,7 +16,7 @@ body {
 }
 
 .result strong{
-    font-size: 3em;
+    font-size: 24px;
 }
 
 .result img{
@@ -83,7 +25,7 @@ body {
 }
 
 .search-home{
-    background-color: lightgray;
+    background-color: lightsteelblue;
     padding: 10%;
 }
 
@@ -91,7 +33,6 @@ body {
     text-align: center;
     margin: 0;
     font-size: 4em;
-    font-family: "Montaga";
     font-weight: normal;
 }
 
@@ -116,7 +57,18 @@ body {
     text-align: center;
     font-size: 2.5em; 
 }
-
+#message_bad {
+    font-size: 16pt;
+    color: red;
+}
+#message_good {
+    font-size: 16pt;
+    color: darkgreen;
+}
+#message_bad_account{
+    font-size:12pt;
+    color:red;
+}
 .about-band-image{
     float:left;
     height:150px;
@@ -179,7 +131,8 @@ input[type=text] {
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 24px;
+    font-family: VT323, monospace;
     background-color: white;
     background-image: url('Images/searchicon.png');
     background-size: 20px, 20px;
@@ -232,12 +185,14 @@ input[type=text] {
     padding-bottom: 10%;
     background-color: lightgray;
     margin-bottom:100px;
+    font-family: VT323, monospace;
 }
 
 .create-account {
     padding: 5%;
     background-color: lightgray;
     padding-bottom: 13%;
+    font-family: VT323, monospace;
 }
 .login button-confirm{
 

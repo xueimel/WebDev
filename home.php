@@ -25,54 +25,6 @@
     <br> <!-- line break-->
     <br>
     <section>
-        <h2>TOURS</h2>
-        <div>
-            <div>
-                <strong>Jul 16</strong>
-                &lt;&gt; <!-- temp fix to add space-->
-                <span>Detroit, MI </span>
-                &lt;&gt;
-                <span>DTE ENergy Music Theatre</span>
-                &lt;&gt;
-                <button type="button">Buy Tickets</button>
-                <hr>
-            </div>
-        </div>
-        <div>
-            <div>
-                <strong>Jul 17</strong>
-                &lt;&gt; <!-- temp fix to add space-->
-                <span>Lansing, MI </span>
-                &lt;&gt;
-                <span>DHobo Music Theatre</span>
-                &lt;&gt;
-                <button type="button">Buy Tickets</button>
-                <hr>
-            </div>
-        </div>
-        <div>
-            <div>
-                <strong>Jul 20</strong>
-                &lt;&gt; <!-- temp fix to add space-->
-                <span>Minneapolis , MN </span>
-                &lt;&gt;
-                <span>1st Ave</span>
-                &lt;&gt;
-                <button type="button">Buy Tickets</button>
-                <hr>
-            </div>
-        </div>
-        <div>
-            <div>
-                <strong>Jul 22</strong>
-                &lt;&gt; <!-- temp fix to add space-->
-                <span>Minot, ND</span>
-                &lt;&gt;
-                <span>Some trash punk dude's house</span>
-                &lt;&gt;
-                <button type="button">Buy Tickets</button>
-            </div>
-        </div>
 
     </section>
     <footer class="main-footer">

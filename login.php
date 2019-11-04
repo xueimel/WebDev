@@ -14,12 +14,16 @@
         <body>
             <?php 
                 require_once 'header.php';
-
-				if (isset($_SESSION['message'])){
-					echo "<div class='message bad'>{$_SESSION['message']}</div>";
+			?>
+			<?php
+				if (isset($_SESSION['message_bad'])){
+					echo "<div id='message_bad'>{$_SESSION['message_bad']}</div>";
+				}
+				else if (isset($_SESSION['message_good'])){
+					echo "<div id='message_good'>{$_SESSION['message_good']}</div>";
 				}
 			?>
-			<form method="get" action="login.php">
+			<form method="post" action="login_handler.php">
 				<section class="login">
 					<div class="login-container">
 						<input type="text" name="username" placeholder="Username">
@@ -28,6 +32,11 @@
 					</div>
 				</section>
 			</form>
+			<?php
+				if (isset($_SESSION['message_bad_account'])){
+					echo "<div id='message_bad_account'>{$_SESSION['message_bad_account']}</div>";
+				}
+			?>
 			<form method="post" action="new_account_handler.php">
 				<section class="create-account">
 					<div class="create-account-container">

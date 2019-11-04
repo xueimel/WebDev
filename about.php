@@ -13,27 +13,8 @@
     <section class="content-section container">
         <p>
             <img class="about-band-image" src="Images/IMG_004.JPG">
-            Lorem ipsum dolor sit amet, in sea agam malis ludus, has eu consul numquam, mea in modo illud fastidii.
-            Assum quidam feugait at cum, cu cum malis scaevola, nec numquam minimum verterem an. Eam feugiat legendos
-            honestatis at, mea esse persecuti repudiandae ei. Pri suas stet habemus an, ipsum percipitur liberavisse
-            has ut, et pri omnis fugit graeci. Eros aliquid mel id, id quo errem facilisi, his nisl sint consulatu ei.
-
-            Legere delectus repudiare per ad, eam ex enim interesset. Eum dicit verterem splendide ad, nec ad debet
-
-            Est quod scribentur ei, vis option disputationi no, per nemore eloquentiam ex. Scripserit disputando ea
-            per. Novum legendos in vix, eros impedit ea usu. At omnes suavitate percipitur vel, veniam scriptorem usu
-            te. At offendit definiebas eum, ad vel solum reque scripta. At vix tota percipitur, has at nostrum maluisset,
-            mei ut case vocibus qualisque.
-
-
-
-            Erat meis veritus te eum, nam vide mundi eu, et dicta erant bonorum mea. Usu mundi liberavisse ea. Duis
-            partem no eos, facete numquam reformidans sed ne, nobis eruditi facilisi ex vis. Eam eu vide ponderum consulatu.
-            Nec id tale nominati, velit luptatum nominati ex mei.
-
-            Error euismod adipiscing mea et. Nec ea iusto oporteat efficiendi, quis commune signiferumque eu nam, ne docendi
-            perpetua tincidunt qui. Est et nostrud liberavisse, pro latine alienum argumentum ei. Ei alienum pertinax conclusionemque
-            eum, ad omnium mentitum elaboraret sed.
+			PLEASE DON'T CONTANCT ME. </br>
+			I'M BUSY WATCHING DOG MEMES
 
         </p>
     </section>

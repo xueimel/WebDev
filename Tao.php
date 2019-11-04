@@ -64,7 +64,13 @@
 			$result = mysqli_query($conn, $sql);
 			//fetch the results
 			$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-		
+		}
+
+		public function add_search($url, $band_name, $venue, $dateTime, $min, $max){
+			$conn = $this->get_connection();
+			$sql = "insert into tickets (url, band_name, venue, concert_date, min, max) values (?, ?, ?, ?, ?, ?)";
+			$stmt= $conn->prepare($sql);
+			$stmt->execute([$url, $band_name, $venue, $dateTime, $min, $max]);
 		}
 	}
 ?>

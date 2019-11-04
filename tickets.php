@@ -1,3 +1,10 @@
+<?php 
+    require_once 'header.php';
+	if(!isset($_SESSION)){
+		session_start();
+	}
+print($_SESSION['search_location']);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,47 +15,42 @@
 <body>
     <?php 
         require_once 'header.php';
-		session_start();
+		if(!isset($_SESSION)){
+			session_start();
+		}
+	print_r($_SESSION['search_location']);
 	?>
-
     <section>
         <hr>
         <h2>TICKETS</h2>
-		<?php print("Location: ".$_SESSION['search_location']."\n Artist: ".$_SESSION['search_artist']);?>
+		<?php 
+		if(isset($_SESSION['search_location'])){
+			print("Location: ".$_SESSION['search_location']."\n Artist: ".$_SESSION['search_artist']);
+		}
+		if(isset($_SESSION['ticketmaster'])){
+			foreach($_SESSION['ticketmaster'] as $res){
+			print_r($res);
+				print("<div class=\"result\"><div><strong>Ticketmaster</strong></div>");
+				print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/ticketmaster.png\"> </a>");
+				//print("<span>.$res['min'].</span>");
+			}
+		}
+		?>
+
         <hr>
-        <div class="result">
-            <div>
-                <strong>StubHub</strong>
-            </div>
-            <a href="https://www.stubhub.com"> <img src="Images/stubhub.png"></a>
-                <div>
-                    <span>$12.99</span>
-                    <button class="purchase">PURCHASE</button>
-                </div>
-		</div>
-        <br>
-        <div class="result">
+
+		<div class="result">
             <div>
                 <strong>Ticketmaster</strong>
             </div>
-           <a href="https://www.ticketmaster.com"> <img src="Images/ticketmaster.png"> </a>
+            <a href="https://www.ticketmaster.com"> <img src="Images/ticketmaster.png"> </a>
             <div>
                 <span>$12.99</span>
                 <button class="purchase">PURCHASE</button>
-            </div>
-
-        </div>
-        <br>
-        <div class="result">
-            <div>
-                <strong>Eventbrite</strong>
-            </div>
-            <a href="https://www.eventbrite.com"><img src="Images/eventbrite_logo.jpg" /> </a> 
-            <div>
-                <span>$15.99</span>
-                <button class="purchase">PURCHASE</button>
-            </div>
-        </div>
+			</div>
+			<br>
+		</div>
+      
     </section>
 
 
