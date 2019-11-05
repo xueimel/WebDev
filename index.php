@@ -19,9 +19,9 @@
 			<br />
 			<input type="text" name="artist" placeholder="Artist">
 			<br />
-			<input type="text" name="location" placeholder="City or ZIP Code">
+			<input type="text" name="location" placeholder="City">
 		
-			<button class="submit">SEARCH</button>
+			<button class="submit">SEARCH FOR TICKETS</button>
 		</div>
 	</form>
     <br />

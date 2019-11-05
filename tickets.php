@@ -16,45 +16,52 @@
         <hr>
         <h2>TICKETS</h2>
 		<?php 
-			if(isset($_SESSION['search_location'])){
-				print("Location: ".$_SESSION['search_location']."\n Artist: ".$_SESSION['search_artist']);
-
+			$no_results = true;
+			if(isset($_SESSION['search_location']) || isset($_SESSION['search_artist'])){
+				print("YOU SEARCHED FOR:<br>  Artist: ".$_SESSION['search_artist']."<br>  Location:".$_SESSION['search_location'].'<br>');
+				print("<br><strong>HIT THE LOGO AGAIN TO START A NEW SEARCH</strong><hr>");
 				if(isset($_SESSION['ticketmaster'])){
-				$ticketmaster = $_SESSION['ticketmaster'];
-				foreach ($ticketmaster as $res){
-					print("<div class=\"result_container\">");
-					print("<span class=\"result_left\"><span><strong>Ticketmaster</strong></span><br>");
-					print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/ticketmaster.png\"> </a>");
-					print("</span><span class=\"result_right\">");
-					print("<br>ARTIST:".$res['band_name']."<br>");
-					print("VENUE:".$res['venue']."<br>");
-					print("MIN:".$res['min_price']."<br>");
-					print("MAX:".$res['max_price']);
-					print("<button><a href=\"#\">GO TO SITE</a></button>");
-					print("</div><hr>");
+					$ticketmaster = $_SESSION['ticketmaster'];
+					foreach ($ticketmaster as $res){
+						$no_results = false;
+						print("<div class=\"result_container\">");
+						print("<span class=\"result_left\"><span><strong>Ticketmaster</strong></span><br>");
+						print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/ticketmaster.png\"> </a>");
+						print("</span><span class=\"result_right\">");
+						print("<br>ARTIST:".$res['band_name']."<br>");
+						print("DATE: ".$res['dateTime']."<br>");
+						print("VENUE: ".$res['venue']."<br>");
+						print("MIN: $".$res['min_price']."<br>");
+						print("MAX: $".$res['max_price']);
+						print("</span></span>");
+						print("<button id=\"b\"><a href=\"".$res['url']."\">GO TO SITE</a></button>");
+						print("</div><hr>");
+						}
 					}
-				}
 				if(isset($_SESSION['seatgeek'])){
-				$seatgeek = $_SESSION['seatgeek'];
-				foreach ($seatgeek as $res){
-					print("<div class=\"result_container\">");
-					print("<span class=\"result_left\"><span><strong>SeatGeek</strong></span><br>");
-					print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/seatgeek.jpg\"> </a>");
-					print("</span><span class=\"result_right\">");
-					print("<br>ARTIST:".$res['band_name']."<br>");
-					print("VENUE:".$res['venue']."<br>");
-					print("MIN:".$res['min_price']."<br>");
-					print("MAX:".$res['max_price']);
-					print("</span></span>");
-					print("<button><a href=\"#\">GO TO SITE</a></button>");
-					print("</div><hr>");
-					//print("</div></div><hr>");
+					$seatgeek = $_SESSION['seatgeek'];
+					foreach ($seatgeek as $res){
+						$no_results = false;	
+						print("<div class=\"result_container\">");
+						print("<span class=\"result_left\"><span><strong>SeatGeek</strong></span><br>");
+						print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/seatgeek.jpg\"> </a>");
+						print("</span><span class=\"result_right\">");
+						print("<br>ARTIST:".$res['band_name']."<br>");
+						print("DATE: ".$res['dateTime']."<br>");
+						print("VENUE: ".$res['venue']."<br>");
+						print("MIN: $".$res['min_price']."<br>");
+						print("MAX: $".$res['max_price']);
+						print("</span></span>");
+						print("<button id=\"b\"><a href=\"".$res['url']."\">GO TO SITE</a></button>");
+						print("</div><hr>");
+						//print("</div></div><hr>");
+						}
 					}
-				}
 
 				if(isset($_SESSION['eventbrite'])){
 					$eventbrite = $_SESSION['eventbrite'];
 					foreach ($eventbrite as $res){
+						$no_results = false;
 						print("<div class=\"result_container\">");
 						print("<span class=\"result_left\"><div><strong>EventBrite</strong></div>");
 						print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/eventbrite_logo.jpg\"> </a>");
@@ -63,21 +70,24 @@
 						print("<br>Date: ".$res['date']."<br>");
 						print("BAND NAME: ".$res['band_name']."<br>");
 						print("INFO: ".$res['info']);
-						print("</span><button><a href=\"#\">GO TO SITE</a></button>");
+						print("</span><button id=\"b\"><a href=\"".$res['url']."\">GO TO SITE</a></button>");
 						print("</div><hr>");
 					}
+				}
+				if ($no_results){
+					print("<br><strong>WE'RE SORRY, WE COULDN'T FIND ANYTHING THAT MATCHED YOUR SEARCH</strong>");
 				}
 			}
 			else{
 				print("Please Click the LOGO in the above if you wish to start a search");
 				print("<div class=\"ex_space\">");
+				print("<br><strong>HIT THE LOGO AGAIN TO START A NEW SEARCH</strong>");
 			}
 		?>
 
         <hr>
       
     </section>
-
 
     <footer class="main-footer">
         <div class="container main-footer-container">

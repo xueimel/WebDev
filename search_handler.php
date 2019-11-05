@@ -20,7 +20,6 @@
 	else{
 		$link = "https://app.ticketmaster.com/discovery/v2/events?apikey=myRrgOe5eH8B7TVbVnP7jr7WBeTKoY4t&keyword=".$artist."&locale=*&city=".$location;
 	}
-	//$info = file_get_contents("https://app.ticketmaster.com/discovery/v2/events?apikey=myRrgOe5eH8B7TVbVnP7jr7WBeTKoY4t&keyword=".$artist."&locale=*&city=Boise&stateCode=ID");
 	$info = file_get_contents($link);
 	$info = json_decode($info);
 
@@ -32,7 +31,7 @@
 			$ticketmaster[$i]['url'] = ($event->url);
 			$ticketmaster[$i]['band_name'] = ($event->name);
 			$ticketmaster[$i]['venue'] = ($event->_embedded->venues[0]->name);
-			$ticketmaster[$i]['dateTime'] = ($event->dates->start->dateTime);
+			$ticketmaster[$i]['dateTime'] = str_replace('T', ' ', $event->dates->start->dateTime);
 			if (isset($event->priceRanges[0]->min)){
 				$ticketmaster[$i]['min_price'] = ($event->priceRanges[0]->min);
 				$ticketmaster[$i]['max_price'] = ($event->priceRanges[0]->max);
@@ -64,7 +63,7 @@
 		$seatgeek[$i]['url'] = ($events[$i]->url);
 		$seatgeek[$i]['band_name'] = ($events[$i]->title);
 		$seatgeek[$i]['venue'] = ($events[$i]->venue->name);
-		$seatgeek[$i]['dateTime'] = ($events[$i]->datetime_local);
+		$seatgeek[$i]['dateTime'] = str_replace('T', ' ', $events[$i]->datetime_local);
 
 		$seatgeek[$i]['min_price'] = ($events[$i]->stats->lowest_price);
 		
@@ -94,10 +93,10 @@
 	foreach ($events as $event){
 		$eventbrite[$i]['url'] = ($events[$i]->url);
 		$eventbrite[$i]['band_name'] = ($events[$i]->name->text);
-		$eventbrite[$i]['date'] = ($events[$i]->start->local);
+		$eventbrite[$i]['date'] = str_replace('T', ' ',$events[$i]->start->local);
 		if (isset($events[$i]->summary)){
 			$eventbrite[$i]['info'] = ($events[$i]->summary);
-			print($eventbrite[$i]['info']);
+
 		}else{
 			$eventbrite[$i]['info'] = "Please Visit URL for more info";
 		}

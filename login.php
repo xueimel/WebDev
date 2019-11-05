@@ -26,6 +26,7 @@
 			<hr>
 			<form method="post" action="login_handler.php">
 				<section class="login">
+				<h2>ALREADY A MEMBER? LOG IN HERE!</h2>
 					<div class="login-container">
 						<input type="text" name="username" placeholder="Username">
 						<input type="password" name="password" placeholder="Password">
@@ -40,6 +41,7 @@
 			?>
 			<form method="post" action="new_account_handler.php">
 				<section class="create-account">
+					<h2>NOW'S YOUR CHANCE, BECOME A MEMBER!</h2>
 					<div class="create-account-container">
 						<input type="text" name="fname" placeholder="First Name">
 						<input type="text" name="lname" placeholder="Last Name">
@@ -48,7 +50,7 @@
 						<input type="text" name="username" placeholder="Username">
 						<input type="text" name="password" placeholder="Password">
 						<input type="text" name="password2" placeholder="Reconfirm Password">
-						<button class="submit">SUBMIT</button>
+						<button class="submit">CREATE ACCOUNT</button>
 					</div>
 				</section>
 			</form>

@@ -16,6 +16,13 @@ body {
     padding: 10%;
 }
 
+.search-home strong {
+    font-family: VT323, monospace;
+    font-size: 20pt;
+    font-weight: 300;
+    padding: 3%;
+}
+
 .company-name{
     text-align: center;
     margin: 0;
@@ -83,20 +90,40 @@ body {
     background-color: lightsteelblue;
     color: black;
 }
-.result_container button {
+#spec { /*button for the ticket GO TO SITE LINK*/
+    background-color: rgb(23,66,108);
+    color: white;
+    padding: 15px;
+    position: relative;
+
+    left: 72%;
+    bottom: 30px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: VT323, monospace;
+}
+
+
+#b { /*button for the ticket GO TO SITE LINK*/
     background-color: rgb(23,66,108);
     color: white;
     padding: 15px;
     position: relative;
     bottom: 30px;
-
+    color: white;
     font-size: 20px;
     border: none;
     cursor: pointer;
     float: right;
-    width: 20%;
+
     border-radius: 10px;
     font-family: VT323, monospace;
+}
+.result_container a{
+    color:white;
 }
 
 .result_left img {
@@ -190,7 +217,12 @@ input[type=password] {
     margin-bottom: 100px;
     font-family: VT323, monospace;
 }
-
+.login h2 {
+    font-weight: 300;
+}
+.create-account h2 {
+    font-weight: 300;
+}
 .create-account {
     padding: 5%;
     background-color: lightsteelblue;
