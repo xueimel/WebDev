@@ -3,7 +3,6 @@
 	if(!isset($_SESSION)){
 		session_start();
 	}
-	print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,33 +16,60 @@
         <hr>
         <h2>TICKETS</h2>
 		<?php 
-			print_r($_SESSION);
 			if(isset($_SESSION['search_location'])){
 				print("Location: ".$_SESSION['search_location']."\n Artist: ".$_SESSION['search_artist']);
 			}
 			if(isset($_SESSION['ticketmaster'])){
-				foreach($_SESSION['ticketmaster'] as $res){
-				print_r($res);
-					print("<div class=\"result\"><div><strong>Ticketmaster</strong></div>");
-					print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/ticketmaster.png\"> </a>");
-					//print("<span>.$res['min'].</span>");
+			$ticketmaster = $_SESSION['ticketmaster'];
+			foreach ($ticketmaster as $res){
+				print("<div class=\"result_container\">");
+				print("<span class=\"result_left\"><span><strong>Ticketmaster</strong></span><br>");
+				print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/ticketmaster.png\"> </a>");
+				print("</span><span class=\"result_right\">");
+				print("<br>ARTIST:".$res['band_name']."<br>");
+				print("VENUE:".$res['venue']."<br>");
+				print("MIN:".$res['min_price']."<br>");
+				print("MAX:".$res['max_price']);
+				print("<button><a href=\"#\">GO TO SITE</a></button>");
+				print("</div><hr>");
+				}
+			}
+			if(isset($_SESSION['seatgeek'])){
+			$seatgeek = $_SESSION['seatgeek'];
+			foreach ($seatgeek as $res){
+				print("<div class=\"result_container\">");
+				print("<span class=\"result_left\"><span><strong>SeatGeek</strong></span><br>");
+				print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/seatgeek.jpg\"> </a>");
+				print("</span><span class=\"result_right\">");
+				print("<br>ARTIST:".$res['band_name']."<br>");
+				print("VENUE:".$res['venue']."<br>");
+				print("MIN:".$res['min_price']."<br>");
+				print("MAX:".$res['max_price']);
+				print("</span></span>");
+				print("<button><a href=\"#\">GO TO SITE</a></button>");
+				print("</div><hr>");
+				//print("</div></div><hr>");
+				}
+			}
+
+			if(isset($_SESSION['eventbrite'])){
+				$eventbrite = $_SESSION['eventbrite'];
+				foreach ($eventbrite as $res){
+					print("<div class=\"result_container\">");
+					print("<span class=\"result_left\"><div><strong>EventBrite</strong></div>");
+					print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/eventbrite_logo.jpg\"> </a>");
+					print("</span>");
+					print("<span class=\"result_right\">");
+					print("<br>Date: ".$res['date']."<br>");
+					print("BAND NAME: ".$res['band_name']."<br>");
+					print("INFO: ".$res['info']);
+					print("</span><button><a href=\"#\">GO TO SITE</a></button>");
+					print("</div><hr>");
 				}
 			}
 		?>
 
         <hr>
-
-		<div class="result">
-            <div>
-                <strong>Ticketmaster</strong>
-            </div>
-            <a href="https://www.ticketmaster.com"> <img src="Images/ticketmaster.png"> </a>
-            <div>
-                <span>$12.99</span>
-                <button class="purchase">PURCHASE</button>
-			</div>
-			<br>
-		</div>
       
     </section>
 
