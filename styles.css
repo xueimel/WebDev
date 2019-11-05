@@ -3,7 +3,7 @@
 
 *{
     box-sizing: border-box;
-    color: rgb(134, 133, 133);
+
 }
 
 body {
@@ -80,8 +80,8 @@ body {
 .result_container {
     float: none;
     padding: 1%;
-    background-color: lightgray;
-
+    background-color: lightsteelblue;
+    color: black;
 }
 .result_container button {
     background-color: rgb(23,66,108);
@@ -105,6 +105,10 @@ body {
     height: 100px;
 }
 
+.ex_space {
+    margin-top: 10%;
+
+}
 
 input[type=text] {
     width: 100%;
@@ -135,11 +139,14 @@ input[type=password] {
     padding: 12px 20px 12px 40px;
 }
 .main-footer {
- 
+    position: fixed;
     bottom: 0;
+    width: 100%;
     margin-top: 25%;
     background-color: rgb(193, 225, 232);
-    color: white;
+    color: black;
+    font-family: VT323, monospace;
+    font-size: 20px;
 }
 .main-footer-container{
     display:flex;

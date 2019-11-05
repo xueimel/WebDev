@@ -7,7 +7,7 @@
 <html>
     <html>
         <head>
-            <title>Scallywag Tickets | About</title>
+            <title>Scallywag Tickets | LOGIN / SIGNUP </title>
             <meta name="description" content="the place to score tickets without overpaying"> <!--gives a descrip which may be used by google  or other search engines-->
             <link rel="stylesheet" href="styles.css">
         </head>
@@ -54,7 +54,7 @@
 			</form>
 	            <footer class="main-footer">
                 <div class="container main-footer-container">
-                    <h3 class="band-name">cheap cheap</h3>
+                    <h3 class="band-name">SCALLYWAG TICKETS</h3>
                     <ul class="nav footer-nav">
                         <li>
                             <a href="https://facebook.com" target="_blank">

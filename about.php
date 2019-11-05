@@ -20,7 +20,7 @@
     </section>
     <footer class="main-footer">
         <div class="container main-footer-container">
-            <h3 class="band-name">cheap cheap</h3>
+            <h3 class="band-name">SCALLYWAG TICKETS</h3>
             <ul class="nav footer-nav">
                 <li>
                     <a href="https://facebook.com" target="_blank">

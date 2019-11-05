@@ -5,7 +5,6 @@
 ?>
 <html>
 	<head>
-		<title>Scallywag Tickets | About</title>
 		<meta name="description" content="the place to score tickets without overpaying"> <!--gives a descrip which may be used by google  or other search engines-->
 		<link rel="stylesheet" href="headerstyle.css">
 
