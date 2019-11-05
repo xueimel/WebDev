@@ -19,9 +19,7 @@
 			//write query
 			$sql = "insert into users (username, password, fname, lname, phone, email) values (?, ?, ?, ?, ?, ?)";
 			$stmt= $conn->prepare($sql);
-			//$stmt->bind_param("ssssss", $username, $password, $fname, $lname, $phone, $email);
 			$stmt->execute([$username, $password, $fname, $lname, $phone, $email]);
-
 		}
 
 		public function get_users(){

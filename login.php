@@ -3,7 +3,6 @@
     { 
         session_start(); 
     } 
-	print_r($_SESSION);
 ?>
 <html>
     <html>
@@ -24,6 +23,7 @@
 					echo "<div id='message_good'>{$_SESSION['message_good']}</div>";
 				}
 			?>
+			<hr>
 			<form method="post" action="login_handler.php">
 				<section class="login">
 					<div class="login-container">

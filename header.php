@@ -1,9 +1,6 @@
-
 <?php 
 	if(!isset($_SESSION)){ 
 		session_start(); 
-		$_SESSION = array();
-		print_r($_SESSION);
 	} 
 ?>
 <html>
@@ -19,7 +16,7 @@
 			<!-- tells the website that there are links here-->
 			<div id="nav-container">
 				<div class="left">
-					<a href="home.php">LOGO IN TRAINING</a>
+					<a href="home.php"><img src="Images/logo4.png"></a>
 				</div>
 
 				<div class="center">
@@ -30,6 +27,7 @@
 				</div>
 			
 				<div class="right">
+				<ul><li>
 					<a href=
 						<?php 
 							 if (isset($_SESSION['logged_in'])) {
@@ -40,6 +38,7 @@
 							}
 						?>
 					</a>
+				</ul></li>
 				</div>
 			</div>
 		</nav>

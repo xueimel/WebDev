@@ -23,13 +23,13 @@
         $_SESSION['logged_in'] = true;
         $_SESSION['user'] = $username;
         header("Location: login.php");
-        exit;
+        exit();
     }
 
     else{
         $_SESSION['message_bad'] = "Invalid username or password";
         header("Location: login.php");
-        exit;
+        exit();
     }
     
 ?>

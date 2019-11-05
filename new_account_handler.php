@@ -1,7 +1,9 @@
 <?php
-	session_start();
+	if(!isset($_SESSION)){ 
+		session_start(); 
+	}
 	require_once 'Tao.php';
-
+	print("here");
 	$fname = $_POST["fname"];
 	$lname = $_POST["lname"];
 	$email = $_POST["email"];
@@ -18,11 +20,21 @@
 		$incorrect[] = "Missing required fields";
 	}
 	if (!empty($res)){
-		$incorrect[] = "Username already in use";
+		$inc_size = count($incorrect);
+		$incorrect[$inc_size] = "Username already in use";
 	}
 	if (!$password == $password2){
-		$incorrect[] = "Passwords not matching";
+		$inc_size = count($incorrect);
+		$incorrect[$inc_size] = "Passwords not matching";
 	}
+	$correct = preg_match('/.{8}/', $password);//password must be 8 chars
+
+	print($correct);
+	if (!$correct){
+		$inc_size = count($incorrect);
+		$incorrect[$inc_size] = "Password needs to be at least 8 characters";
+	}
+
 
 	if(empty($incorrect)){
 		$valid = True;
@@ -37,15 +49,15 @@
 		$tao->add_user($username, $password, $fname, $lname, $phone, $email);
 		$_SESSION['message_good'] = "Congratulations ".$username." You are now a Scallywag member!";
         $_SESSION['logged_in'] = true;
-        header("Location: login.php");
-        exit;
+        header("Location: granted.php");
+        exit();
     }
     else{
 		foreach ($incorrect as $wrong){
 			$_SESSION['message_bad_account'] = $_SESSION['message_bad_account']." ".$wrong."<br>";
 			print($_SESSION['message_bad_account']);
 		}
-        header("Location: login.php");
-        exit;
+        header("Location: granted.php");
+        exit();
     }
 ?>
