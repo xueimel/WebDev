@@ -14,12 +14,11 @@
 <body>
     <section>
         <hr>
-        <h2>TICKETS</h2>
-		<?php 
+		<?php
 			$no_results = true;
 			if(isset($_SESSION['search_location']) || isset($_SESSION['search_artist'])){
 			    print("<div id=\"search-results\">");
-				print("YOU SEARCHED FOR: <br>  Artist: ".strtoupper($_SESSION['search_artist'])."<br>  Location: ".strtoupper($_SESSION['search_location']).'<br>');
+				print("YOU SEARCHED FOR: <br><br>  Artist: ".strtoupper($_SESSION['search_artist'])."<br>  Location: ".strtoupper($_SESSION['search_location']).'<br><br>');
 				print("Found: ".$_SESSION['num_found']." Tickets Which May Have Matched Your Search");
                 print("</div><hr>");
                 print("<div class=\"ex_space\"></div>");
@@ -31,14 +30,16 @@
 						print("<div class=\"result_container\">");
 						print("<span class=\"result_left\"><span><strong>Ticketmaster</strong></span><br>");
                         print("<a href=\"https://www.ticketmaster.com\"> <img src=\"images/ticketmaster.png\"> </a>");
-                        print("</span><span class=\"result_right\"><span class=\"close\">x</span>");
+                        print("</span><span class=\"result_right\">");
 						print("<br>ARTIST:".$res['band_name']."<br>");
 						print("DATE: ".$res['dateTime']."<br>");
 						print("VENUE: ".$res['venue']."<br>");
 						print("MIN: $".$res['min_price']."<br>");
 						print("MAX: $".$res['max_price']);
 						print("</span></span>");
+                        print("<span class=\"close\">x</span>");
 						print("<button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
+//                        print("<button id=\"b\">SAVE</button>");
 						print("</div>");
 						}
 					}
@@ -56,7 +57,8 @@
 						print("MIN: $".$res['min_price']."<br>");
 						print("MAX: $".$res['max_price']);
 						print("</span></span>");
-						print("<button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
+                        print("<span class=\"close\">x</span>");
+                        print("<button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
 						print("</div>");
 						//print("</div></div><hr>");
 						}
@@ -74,7 +76,8 @@
 						print("<br>Date: ".$res['date']."<br>");
 						print("BAND NAME: ".$res['band_name']."<br>");
 						print("INFO: ".$res['info']);
-						print("</span><button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
+                        print("<span class=\"close\">x</span>");
+                        print("</span><button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
 						print("</div>");
 
 					}
@@ -94,10 +97,13 @@
                     });
                 </script>
                 <?php
-				print("<div id=\"wrong\"> Please Click the ScallyWag LOGO and search or login to access your tickets</div>");
-				print("<div class=\"ex_space\"></div>");
+//				print("<div id=\"wrong\"> Please Click the ScallyWag LOGO and search or login to access your tickets</div>");
+//				print("<div class=\"ex_space\"></div>");
 			}
-		?>
+        print("<div id=\"wrong\"> Please Click the ScallyWag LOGO and search or login to access your tickets</div>");
+        print("<div class=\"ex_space\"></div>");
+
+        ?>
 
         <hr>
       
@@ -125,12 +131,15 @@
 
 <script src = jquery/jquery.js></script>
 <script>
-
-    window.onload = function(){
-        document.getElementById('close').onclick = function(){
-            this.parentNode.parentNode.parentNode
-                .removeChild(this.parentNode.parentNode);
-            return false;
-        };
-    };
+    $(".close").click(function() {
+        var panelId = $(event.target).hide(1000);
+        panelId.click().parent().parent().hide(1000);
+    });
+    // window.onload = function(){
+    //     document.getElementById('close').onclick = function(){
+    //         this.parentNode.parentNode.parentNode
+    //             .removeChild(this.parentNode.parentNode.parentElement);
+    //         return false;
+    //     };
+    // };
 </script>

@@ -16,8 +16,8 @@ body {
 }
 
 .search-home strong {
-    font-family: VT323, monospace;
-    font-size: 250%;
+    font-family: "Montaga";
+    font-size: 220%;
     font-weight: 300;
     padding: 3%;
 }
@@ -35,6 +35,7 @@ body {
 
 .content-section{
     margin: 1em;
+    font-size: 25px;
 }
 
 .container{
@@ -87,15 +88,12 @@ body {
      text-overflow: ellipsis;
 }
 
-.close {
-    position: absolute;
-}
-
 #search-results {
-    background-color: rgb(23,66,108);
     padding: 1%;
     font-size: 23px;
     color: white;
+    background-color: steelblue;
+
 }
 
 .result_container {
@@ -122,6 +120,33 @@ body {
     font-family: VT323, monospace;
 }
 
+.close {
+    color:black;
+    padding: 15px;
+    position: relative;
+    bottom: 250px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+
+#b { /*button for the ticket GO TO SITE LINK*/
+    background-color: rgb(23,66,108);
+    color: white;
+    padding: 15px;
+    position: relative;
+    bottom: 30px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    float: right;
+
+    border-radius: 10px;
+    font-family: VT323, monospace;
+}
 
 #b { /*button for the ticket GO TO SITE LINK*/
     background-color: rgb(23,66,108);

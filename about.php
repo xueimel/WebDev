@@ -9,12 +9,14 @@
     <?php 
         require_once 'header.php';
     ?>
-    <h2 class="section-header">ABOUT</h2>
+    <h2 class="section-header">ABOUT US...I Mean Me</h2>
     <section class="content-section container">
         <p>
             <img class="about-band-image" src="images/IMG_004.JPG">
-			PLEASE DON'T CONTANCT ME. </br>
-			I'M BUSY WATCHING DOG MEMES
+			This page is really a spoof. If something went wrong, it's not on me. <br>
+            More over, I don't really care. This was just a project for school. <br>
+            How did you even find your way here? <br>
+            Your mother would be ashamed of your actions on the internet.
 
         </p>
     </section>
