@@ -10,4 +10,8 @@ print_r($_SESSION);
     echo "ACCESS GRANTED ";
 
 ?>
+
+<script type = "text/javascript" src = jquery/jquery.js></script><script> alert("why are you on this page??");</script>
+
+
 <a id="logout" href="logout_handler.php">Logout</a>

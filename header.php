@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta name="description" content="the place to score tickets without overpaying"> <!--gives a descrip which may be used by google  or other search engines-->
-		<link rel="stylesheet" href="headerstyle.css">
+		<link rel="stylesheet" href="css/headerstyle.css">
 	</head>
 	<header class="main-header">
 		<nav class="nav main-nav">
@@ -14,7 +14,7 @@
 			<!-- tells the website that there are links here-->
 			<div id="nav-container">
 				<div class="left">
-					<a href="home.php"><img src="Images/logo4.png"></a>
+					<a href="index.php"><img src="images/logo4.png"></a>
 				</div>
 
 				<div class="center">

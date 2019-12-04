@@ -5,11 +5,11 @@
 	}
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Scallywag Tickets | TICKETS</title>
     <meta name="description" content="the place to score tickets without overpaying"> <!--gives a descrip which may be used by google  or other search engines-->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <section>
@@ -18,24 +18,28 @@
 		<?php 
 			$no_results = true;
 			if(isset($_SESSION['search_location']) || isset($_SESSION['search_artist'])){
-				print("YOU SEARCHED FOR:<br>  Artist: ".$_SESSION['search_artist']."<br>  Location:".$_SESSION['search_location'].'<br>');
-				print("<br><strong>HIT THE LOGO AGAIN TO START A NEW SEARCH</strong><hr>");
+			    print("<div id=\"search-results\">");
+				print("YOU SEARCHED FOR: <br>  Artist: ".strtoupper($_SESSION['search_artist'])."<br>  Location: ".strtoupper($_SESSION['search_location']).'<br>');
+				print("Found: ".$_SESSION['num_found']." Tickets Which May Have Matched Your Search");
+                print("</div><hr>");
+                print("<div class=\"ex_space\"></div>");
 				if(isset($_SESSION['ticketmaster'])){
 					$ticketmaster = $_SESSION['ticketmaster'];
+					$num = 0;
 					foreach ($ticketmaster as $res){
 						$no_results = false;
 						print("<div class=\"result_container\">");
 						print("<span class=\"result_left\"><span><strong>Ticketmaster</strong></span><br>");
-						print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/ticketmaster.png\"> </a>");
-						print("</span><span class=\"result_right\">");
+                        print("<a href=\"https://www.ticketmaster.com\"> <img src=\"images/ticketmaster.png\"> </a>");
+                        print("</span><span class=\"result_right\"><span class=\"close\">x</span>");
 						print("<br>ARTIST:".$res['band_name']."<br>");
 						print("DATE: ".$res['dateTime']."<br>");
 						print("VENUE: ".$res['venue']."<br>");
 						print("MIN: $".$res['min_price']."<br>");
 						print("MAX: $".$res['max_price']);
 						print("</span></span>");
-						print("<button id=\"b\"><a href=\"".$res['url']."\">GO TO SITE</a></button>");
-						print("</div><hr>");
+						print("<button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
+						print("</div>");
 						}
 					}
 				if(isset($_SESSION['seatgeek'])){
@@ -44,16 +48,16 @@
 						$no_results = false;	
 						print("<div class=\"result_container\">");
 						print("<span class=\"result_left\"><span><strong>SeatGeek</strong></span><br>");
-						print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/seatgeek.jpg\"> </a>");
+						print("<a href=\"https://www.ticketmaster.com\"> <img src=\"images/seatgeek.jpg\"> </a>");
 						print("</span><span class=\"result_right\">");
-						print("<br>ARTIST:".$res['band_name']."<br>");
+						print("<br>ARTIST: ".$res['band_name']."<br>");
 						print("DATE: ".$res['dateTime']."<br>");
 						print("VENUE: ".$res['venue']."<br>");
 						print("MIN: $".$res['min_price']."<br>");
 						print("MAX: $".$res['max_price']);
 						print("</span></span>");
-						print("<button id=\"b\"><a href=\"".$res['url']."\">GO TO SITE</a></button>");
-						print("</div><hr>");
+						print("<button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
+						print("</div>");
 						//print("</div></div><hr>");
 						}
 					}
@@ -64,24 +68,34 @@
 						$no_results = false;
 						print("<div class=\"result_container\">");
 						print("<span class=\"result_left\"><div><strong>EventBrite</strong></div>");
-						print("<a href=\"https://www.ticketmaster.com\"> <img src=\"Images/eventbrite_logo.jpg\"> </a>");
+						print("<a href=\"https://www.ticketmaster.com\"> <img src=\"images/eventbrite_logo.jpg\"> </a>");
 						print("</span>");
 						print("<span class=\"result_right\">");
 						print("<br>Date: ".$res['date']."<br>");
 						print("BAND NAME: ".$res['band_name']."<br>");
 						print("INFO: ".$res['info']);
-						print("</span><button id=\"b\"><a href=\"".$res['url']."\">GO TO SITE</a></button>");
-						print("</div><hr>");
+						print("</span><button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
+						print("</div>");
+
 					}
 				}
+                print("<div class=\"ex_space\"></div>");
 				if ($no_results){
 					print("<br><strong>WE'RE SORRY, WE COULDN'T FIND ANYTHING THAT MATCHED YOUR SEARCH</strong>");
 				}
 			}
 			else{
-				print("Please Click the LOGO in the above if you wish to start a search");
-				print("<div class=\"ex_space\">");
-				print("<br><strong>HIT THE LOGO AGAIN TO START A NEW SEARCH</strong>");
+			    ?>
+                <script src = jquery/jquery.js></script>
+                <script>
+                    $(function(){
+                        $("#wrong").hide(1).fadeIn(750);
+
+                    });
+                </script>
+                <?php
+				print("<div id=\"wrong\"> Please Click the ScallyWag LOGO and search or login to access your tickets</div>");
+				print("<div class=\"ex_space\"></div>");
 			}
 		?>
 
@@ -95,12 +109,12 @@
             <ul class="nav footer-nav">
                 <li>
                     <a href="https://facebook.com" target="_blank">
-                        <img src="Images/face.png">
+                        <img src="images/face.png">
                     </a>
                 </li>
                 <li>
                     <a href="https://twitter.com" target="_blank">
-                        <img src="Images/download.png">
+                        <img src="images/download.png">
                     </a>
                 </li>
             </ul>
@@ -108,3 +122,15 @@
     </footer>
 </body>
 </html>
+
+<script src = jquery/jquery.js></script>
+<script>
+
+    window.onload = function(){
+        document.getElementById('close').onclick = function(){
+            this.parentNode.parentNode.parentNode
+                .removeChild(this.parentNode.parentNode);
+            return false;
+        };
+    };
+</script>

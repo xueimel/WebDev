@@ -2,8 +2,7 @@
 	if(!isset($_SESSION)){ 
 		session_start(); 
 	}
-	require_once 'Tao.php';
-	print("here");
+	require_once './../Tao.php';
 	$fname = $_POST["fname"];
 	$lname = $_POST["lname"];
 	$email = $_POST["email"];
@@ -32,7 +31,7 @@
 	print($correct);
 	if (!$correct){
 		$inc_size = count($incorrect);
-		$incorrect[$inc_size] = "Password needs to be at least 8 characters";
+		$incorrect[$inc_size] = "Password must be at least 8 characters long";
 	}
 
 
@@ -44,12 +43,12 @@
 
     $_SESSION = array();
     if ($valid) {
-        require_once 'Tao.php';
+        require_once './../Tao.php';
 		$tao = new Tao();
 		$tao->add_user($username, $password, $fname, $lname, $phone, $email);
 		$_SESSION['message_good'] = "Congratulations ".$username." You are now a Scallywag member!";
         $_SESSION['logged_in'] = true;
-        header("Location: granted.php");
+        header("Location: ./../login.php");
         exit();
     }
     else{
@@ -57,7 +56,7 @@
 			$_SESSION['message_bad_account'] = $_SESSION['message_bad_account']." ".$wrong."<br>";
 			print($_SESSION['message_bad_account']);
 		}
-        header("Location: granted.php");
+        header("Location: ./../login.php");
         exit();
     }
 ?>

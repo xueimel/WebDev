@@ -12,7 +12,7 @@
          <head>
 			<title>Scallywag Tickets | About</title>
 			<meta name="description" content="the place to score tickets without overpaying"> <!--gives a descrip which may be used by google  or other search engines-->
-			<link rel="stylesheet" href="styles.css">
+			<link rel="stylesheet" href="css/styles.css">
 		</head>
         <body>
             <?php 
@@ -26,12 +26,12 @@
                     <ul class="nav footer-nav">
                         <li>
                             <a href="https://facebook.com" target="_blank">
-                                <img src="Images/face.png">
+                                <img src="images/face.png">
                             </a>
                         </li>
                         <li>
                             <a href="https://twitter.com" target="_blank">
-                                <img src="Images/download.png">
+                                <img src="images/download.png">
                             </a>
                         </li>
                     </ul>

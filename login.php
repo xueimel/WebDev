@@ -9,7 +9,7 @@
         <head>
             <title>Scallywag Tickets | LOGIN / SIGNUP </title>
             <meta name="description" content="the place to score tickets without overpaying"> <!--gives a descrip which may be used by google  or other search engines-->
-            <link rel="stylesheet" href="styles.css">
+            <link rel="stylesheet" href="css/styles.css">
         </head>
         <body>
             <?php 
@@ -24,7 +24,7 @@
 				}
 			?>
 			<hr>
-			<form method="post" action="login_handler.php">
+			<form method="post" action="handlers/login_handler.php">
 				<section class="login">
 				<h2>ALREADY A MEMBER? LOG IN HERE!</h2>
 					<div class="login-container">
@@ -39,7 +39,7 @@
 					echo "<div id='message_bad_account'>{$_SESSION['message_bad_account']}</div>";
 				}
 			?>
-			<form method="post" action="new_account_handler.php">
+			<form method="post" action="handlers/new_account_handler.php">
 				<section class="create-account">
 					<h2>NOW'S YOUR CHANCE, BECOME A MEMBER!</h2>
 					<div class="create-account-container">
@@ -60,12 +60,12 @@
                     <ul class="nav footer-nav">
                         <li>
                             <a href="https://facebook.com" target="_blank">
-                                <img src="Images/face.png">
+                                <img src="images/face.png">
                             </a>
                         </li>
                         <li>
                             <a href="https://twitter.com" target="_blank">
-                                <img src="Images/download.png">
+                                <img src="images/download.png">
                             </a>
                         </li>
                     </ul>
@@ -73,4 +73,10 @@
             </footer>
         </body>
     </html>
-
+    <script src = jquery/jquery.js></script>
+    <script>
+        $(function(){
+            $(".login").hide(1).fadeIn(1000);
+            $(".create-account").hide(1).delay(250).fadeIn(1000);
+        });
+    </script>

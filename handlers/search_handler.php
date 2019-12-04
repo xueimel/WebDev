@@ -4,8 +4,8 @@
         session_start(); 
     } 
 	$_SESSION['ticketmaster'] = array();
-
-	require_once 'Tao.php';
+    $_SESSION['num_found'] = 0;
+	require_once './../Tao.php';
 	$location = $_GET['location'];
 	$artist = $_GET['artist'];
 	$artist = str_replace(' ', '%20', $artist);
@@ -44,7 +44,7 @@
 			$i = $i+1;
 		}
 	}
-
+    $_SESSION['num_found'] = $i;
 	$_SESSION['ticketmaster'] = $ticketmaster;
 
 	$_SESSION['search_location'] = $location;
@@ -73,11 +73,13 @@
 		//$tao->add_search($ticketmaster[$i]['url'], $ticketmaster[$i]['band_name'], $ticketmaster[$i]['venue'], $ticketmaster[$i]['dateTime'], $ticketmaster[$i]['min_price'], $ticketmaster[$i]['max_price']);
 		$i = $i+1;
 	}
+
 	$_SESSION['seatgeek'] = $seatgeek;
+    $_SESSION['num_found'] = $_SESSION['num_found'] + $i;
 
 
-	
-	//EVENTBRITE MAY RANDOMLY GIVE A 406 OR 426 BUT TRYING TO USE IT ANYWAYS.
+
+//EVENTBRITE MAY RANDOMLY GIVE A 406 OR 426 BUT TRYING TO USE IT ANYWAYS.
 	if (strlen($location) <= 0) {
 		$link = "https://www.eventbriteapi.com/v3/events/search/?q=".$artist."&token=NMQ2GJXCYF2M4MFJ62EU";
 	}
@@ -104,8 +106,8 @@
 		$i = $i+1;
 	}
 	$_SESSION['eventbrite'] = $eventbrite;
-		
-	header("Location: tickets.php");
-	exit();
+    $_SESSION['num_found'] = $_SESSION['num_found'] + $i;
 
+    header("Location: ./../tickets.php");
+	exit();
 ?>
