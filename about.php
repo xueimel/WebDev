@@ -13,11 +13,12 @@
     <section class="content-section container">
         <p>
             <img class="about-band-image" src="images/IMG_004.JPG">
-			This page is really a spoof. If something went wrong, it's not on me. <br>
+			This page is really a spoof. If something went wrong, it's not on me.
             More over, I don't really care. This was just a project for school. <br>
             How did you even find your way here? <br>
-            Your mother would be ashamed of your actions on the internet.
-
+            Your mother would be ashamed of your actions on the internet. I'm ashamed for
+            her...My apologies to her. She clearly raised you to be better than this,
+            yet here we are.
         </p>
     </section>
     <footer class="main-footer">

@@ -16,8 +16,8 @@ body {
 }
 
 .search-home strong {
-    font-family: "Montaga";
-    font-size: 220%;
+    font-family: VT323, monospace;
+    font-size: 250%;
     font-weight: 300;
     padding: 3%;
 }
@@ -53,17 +53,17 @@ body {
 }
 
 #message_bad {
-    font-size: 16pt;
+    font-size: 25pt;
     color: red;
 }
 
 #message_good {
-    font-size: 16pt;
+    font-size: 25pt;
     color: darkgreen;
 }
 
 #message_bad_account{
-    font-size:12pt;
+    font-size:25pt;
     color:red;
 }
 
@@ -89,6 +89,8 @@ body {
 }
 
 #search-results {
+    margin-below:1%;
+    margin-top:1%;
     padding: 1%;
     font-size: 23px;
     color: white;
@@ -111,7 +113,7 @@ body {
     position: relative;
 
     left: 72%;
-    bottom: 30px;
+    bottom: 50px;
     color: white;
     font-size: 20px;
     border: none;
@@ -137,7 +139,7 @@ body {
     color: white;
     padding: 15px;
     position: relative;
-    bottom: 30px;
+    bottom: 70px;
     color: white;
     font-size: 20px;
     border: none;
@@ -183,6 +185,7 @@ body {
     margin-right: 1%;
     background-color: steelblue;
 }
+
 .ex_space {
     margin-top: 10%;
 }
@@ -192,7 +195,7 @@ input[type=text] {
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    font-size: 24px;
+    font-size: 200%;
     font-family: VT323, monospace;
     background-color: white;
     background-size: 20px, 20px;
@@ -268,14 +271,20 @@ input[type=password] {
     font-family: VT323, monospace;
 }
 .login h2 {
+    font-size: 200%;
     font-weight: 300;
 }
+
 .create-account h2 {
+    font-size: 200%;
     font-weight: 300;
 }
+
 .create-account {
     padding: 5%;
     background-color: lightsteelblue;
     padding-bottom: 13%;
     font-family: VT323, monospace;
 }
+
+

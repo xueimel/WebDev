@@ -22,7 +22,8 @@
 	}
 	$info = file_get_contents($link);
 	$info = json_decode($info);
-
+    $min = 99999999999;
+    $max = -1;
 	$ticketmaster = array();
 	if (isset($info->_embedded->events)){
 		$events = ($info->_embedded->events);
@@ -34,7 +35,15 @@
 			$ticketmaster[$i]['dateTime'] = str_replace('T', ' ', $event->dates->start->dateTime);
 			if (isset($event->priceRanges[0]->min)){
 				$ticketmaster[$i]['min_price'] = ($event->priceRanges[0]->min);
-				$ticketmaster[$i]['max_price'] = ($event->priceRanges[0]->max);
+                $min_here = ($event->priceRanges[0]->min);
+                $ticketmaster[$i]['max_price'] = ($event->priceRanges[0]->max);
+                $max_here = ($event->priceRanges[0]->max);
+                if ($min > $min_here){
+                    $min = $min_here;
+                }
+                if ($max < $max_here){
+                    $max = $max_here;
+                }
 				}
 			else{
 				$ticketmaster[$i]['min_price'] = 0.00;
@@ -58,6 +67,7 @@
 	$events = $info->events;
 
 	$i = 0;
+
 	$seatgeek = array();
 	foreach ($events as $event){
 		$seatgeek[$i]['url'] = ($events[$i]->url);
@@ -66,10 +76,17 @@
 		$seatgeek[$i]['dateTime'] = str_replace('T', ' ', $events[$i]->datetime_local);
 
 		$seatgeek[$i]['min_price'] = ($events[$i]->stats->lowest_price);
-		
-		
+		$min_here = ($events[$i]->stats->lowest_price);
+
+        if ($min > $min_here){
+            $min = $min_here;
+        }
 		$seatgeek[$i]['max_price'] = ($events[$i]->stats->highest_price);
-		
+		$max_here = ($events[$i]->stats->highest_price);
+        if ($max < $max_here){
+            $max = $max_here;
+        }
+
 		//$tao->add_search($ticketmaster[$i]['url'], $ticketmaster[$i]['band_name'], $ticketmaster[$i]['venue'], $ticketmaster[$i]['dateTime'], $ticketmaster[$i]['min_price'], $ticketmaster[$i]['max_price']);
 		$i = $i+1;
 	}
@@ -107,7 +124,8 @@
 	}
 	$_SESSION['eventbrite'] = $eventbrite;
     $_SESSION['num_found'] = $_SESSION['num_found'] + $i;
-
+    $_SESSION['min'] = $min;
+    $_SESSION['max'] = $max;
     header("Location: ./../tickets.php");
 	exit();
 ?>

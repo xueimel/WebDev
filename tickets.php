@@ -18,12 +18,15 @@
 			$no_results = true;
 			if(isset($_SESSION['search_location']) || isset($_SESSION['search_artist'])){
 			    print("<div id=\"search-results\">");
-				print("YOU SEARCHED FOR: <br><br>  Artist: ".strtoupper($_SESSION['search_artist'])."<br>  Location: ".strtoupper($_SESSION['search_location']).'<br><br>');
-				print("Found: ".$_SESSION['num_found']." Tickets Which May Have Matched Your Search");
+				print("YOU SEARCHED FOR: <br><br>  Artist: ".strtoupper($_SESSION['search_artist'])."<br>  Location: ".strtoupper($_SESSION['search_location']).'<br>');
+				print("</div><hr><div id=\"search-results\">");
+				print("We Found ".$_SESSION['num_found']." Tickets<br>");
+				print("<br>Minimum Price: $".$_SESSION['min']."<br>");
+				print("Maximum Price: $".$_SESSION['max']."");
                 print("</div><hr>");
-                print("<div class=\"ex_space\"></div>");
 				if(isset($_SESSION['ticketmaster'])){
 					$ticketmaster = $_SESSION['ticketmaster'];
+					$min = 1000000000;
 					$num = 0;
 					foreach ($ticketmaster as $res){
 						$no_results = false;
@@ -35,9 +38,11 @@
 						print("DATE: ".$res['dateTime']."<br>");
 						print("VENUE: ".$res['venue']."<br>");
 						print("MIN: $".$res['min_price']."<br>");
+						if ($min < $_SESSION['min_price']){
+						    $min = $_SESSION['min_price'];
+						}
 						print("MAX: $".$res['max_price']);
 						print("</span></span>");
-                        print("<span class=\"close\">x</span>");
 						print("<button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
 //                        print("<button id=\"b\">SAVE</button>");
 						print("</div>");
@@ -56,8 +61,10 @@
 						print("VENUE: ".$res['venue']."<br>");
 						print("MIN: $".$res['min_price']."<br>");
 						print("MAX: $".$res['max_price']);
+                        if ($min < $_SESSION['min_price']){
+                            $min = $_SESSION['min_price'];
+                        }
 						print("</span></span>");
-                        print("<span class=\"close\">x</span>");
                         print("<button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
 						print("</div>");
 						//print("</div></div><hr>");
@@ -76,7 +83,9 @@
 						print("<br>Date: ".$res['date']."<br>");
 						print("BAND NAME: ".$res['band_name']."<br>");
 						print("INFO: ".$res['info']);
-                        print("<span class=\"close\">x</span>");
+                        if ($min < $_SESSION['min_price']){
+                            $min = $_SESSION['min_price'];
+                        }
                         print("</span><button id=\"b\"><a href=\"".$res['url']."\">PURCHASE</a></button>");
 						print("</div>");
 
@@ -131,7 +140,7 @@
 
 <script src = jquery/jquery.js></script>
 <script>
-    $(".close").click(function() {
+    $(".result_container").click(function() {
         var panelId = $(event.target).hide(1000);
         panelId.click().parent().parent().hide(1000);
     });

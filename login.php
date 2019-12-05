@@ -4,7 +4,6 @@
         session_start(); 
     } 
 ?>
-<html>
     <html>
         <head>
             <title>Scallywag Tickets | LOGIN / SIGNUP </title>
@@ -17,10 +16,10 @@
 			?>
 			<?php
 				if (isset($_SESSION['message_bad'])){
-					echo "<div id='message_bad'>{$_SESSION['message_bad']}</div>";
+					echo "<span id='message_bad'>{$_SESSION['message_bad']}</span>";
 				}
 				else if (isset($_SESSION['message_good'])){
-					echo "<div id='message_good'>{$_SESSION['message_good']}</div>";
+					echo "<span id='message_good'>{$_SESSION['message_good']}</span>";
 				}
 			?>
 			<hr>
@@ -36,7 +35,7 @@
 			</form>
 			<?php
 				if (isset($_SESSION['message_bad_account'])){
-					echo "<div id='message_bad_account'>{$_SESSION['message_bad_account']}</div>";
+					echo "<span id='message_bad_account'>{$_SESSION['message_bad_account']}</span>";
 				}
 			?>
 			<form method="post" action="handlers/new_account_handler.php">
