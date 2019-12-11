@@ -7,14 +7,16 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
 
+    $hash_password = password_hash($password, PASSWORD_DEFAULT );
+
     require_once './../Tao.php';
 	$tao = new Tao();
-    $results = $tao->check_credentials($username, $password);
-    if (empty($results)){
-            $valid = False;
+    $results = $tao->check_hash_creds($username);
+    if(password_verify($password, $results[0])){
+        $valid = True;
     }
     else {
-        $valid = True;
+        $valid = False;
     }
 
     $_SESSION = array();
@@ -25,11 +27,10 @@
         header("Location: ../login.php");
         exit();
     }
-
     else{
+        $_SESSION['pass'] = $hash_password;
         $_SESSION['message_bad'] = "Invalid username or password";
         header("Location: ../login.php");
         exit();
     }
-    
 ?>

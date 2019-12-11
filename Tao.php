@@ -54,6 +54,14 @@
 			return $result;
 		}
 
+		public function check_hash_creds($username){
+            $conn = $this->get_connection();
+            //write query
+            $sql = "select password from users where username = ?";
+            $stmt=$conn->prepare($sql);
+            $stmt->execute([$username]);
+            return $stmt->fetch();
+        }
 		public function get_searches(){
 			$conn = $this->get_connection();	
 			$sql = 'select * from ticket_searches
